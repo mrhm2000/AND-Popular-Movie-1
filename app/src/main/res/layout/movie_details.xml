@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.andproject.popularmovie1.MovieDetailActivity"
+    >
+
+    <ImageView
+        android:id="@+id/imgBackdrop"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:contentDescription="@string/backdrop"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imgBackdrop"
+        android:background="#6F6F6F"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:paddingLeft="@dimen/small_margin"
+        android:paddingRight="@dimen/small_margin"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imgBackdrop"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_margin"
+            >
+
+            <ImageView
+                android:id="@+id/imgPoster"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/poster"
+                android:padding="@dimen/small_margin" />
+            <TextView
+                android:id="@+id/txtOrigTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imgPoster"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/txtRelease"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtOrigTitle"
+                android:layout_toEndOf="@id/imgPoster"
+                android:textSize="18sp"
+                />
+
+            <RatingBar
+                android:id="@+id/movRate"
+                style="?attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtRelease"
+                android:layout_toEndOf="@id/imgPoster"
+                android:numStars="5"
+                android:stepSize="0.5" />
+            <TextView
+                android:id="@+id/txtInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/movRate"
+                android:layout_toEndOf="@id/imgPoster"
+                />
+            <Button
+                android:id="@+id/btnFavorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtInfo"
+                android:layout_toEndOf="@id/imgPoster"
+                android:text="@string/btnFavorite"
+                android:textColor="#FFFFFF"
+                android:background="@color/colorPrimary"
+                />
+
+            <View
+                android:id="@+id/vwSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_below="@id/imgPoster"
+                android:layout_margin="@dimen/super_small_margin"
+                />
+
+            <TextView
+                android:id="@+id/txtOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/synopsis"
+                android:padding="@dimen/small_margin" />
+
+            <TextView
+                android:id="@+id/synopsis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/vwSeparator"
+                android:padding="@dimen/small_margin"
+                android:text="Plot Synopsis"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
